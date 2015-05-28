@@ -17,6 +17,10 @@
             input {
             padding: 1.2em;
             }
+
+            #result_win {
+                color: #c0392b;
+            }
         
         </style>
 
@@ -28,7 +32,6 @@
         <input id='guess'/>
         <button class="btn-aqua" onclick='clicked()'>Guess</button>
         <p id='result_win'></p>
-        <p id='result_lose'></p>
         <p id='result'></p>
         
         <script type="text/javascript">
@@ -38,7 +41,7 @@
             var guess = document.getElementById('guess');
             var result = document.getElementById('result');
             if (guess.value == answer) {
-                result.innerHTML = 'Boom! You won!';
+                result_win.innerHTML = 'Boom! You won!';
             }
             else if (guess.value < answer) {
                 result.innerHTML = 'Too low! Guess again.';
