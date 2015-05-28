@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripping Octo Avenger</title>
+        
+        <style type="text/css">
+
+            p {color:#16a085;}
+            .btn-aqua {
+            background: #16a085;
+            color: white;
+            font-size: 20px;
+            padding: .5em 2em;
+            border: none;
+            }
+            
+            input {
+            padding: 1.2em;
+            }
+        
+        </style>
+
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <h2>This is our first class project!</h2>
+        <p>Guess a number between 1 and 10</p>
+        <input id='guess'/>
+        <button class="btn-aqua" onclick='clicked()'>Guess</button>
+        <p id='result_win'></p>
+        <p id='result_lose'></p>
+        <p id='result'></p>
+        
+        <script type="text/javascript">
+        var answer = Math.floor(Math.random() * 11);
+
+        function clicked () {
+            var guess = document.getElementById('guess');
+            var result = document.getElementById('result');
+            if (guess.value == answer) {
+                result.innerHTML = 'Boom! You won!';
+            }
+            else if (guess.value < answer) {
+                result.innerHTML = 'Too low! Guess again.';
+            }
+            else {
+                result.innerHTML = 'Too High! Guess again.';
+            }
+        }
+        </script>
+    </body>
+</html>
