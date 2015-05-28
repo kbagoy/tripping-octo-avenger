@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tripping-octo-avenger by kbagoy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/kate.css" media="screen">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Tripping-octo-avenger</h1>
+        <h2 class="project-tagline">Kate's CodeFellows Class</h2>
+        <a href="index.html" class="btn">Home</a><a href="https://github.com/kbagoy/tripping-octo-avenger" class="btn">View on GitHub</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+    <section class="main-content">
+        <div>
+            <h1>Guessing Game 1: In Class Coursework</h1>
+            <p>This is the guessing game we built in class, with a few tweaks to styling.</p>
+            <h4>Guess a number between 1 and 10</h4>
+            <input id='guess' />
+            <button class="btn-aqua" onclick='clicked()'>Guess</button>
+            <p id='result' class=""></p>
+            <script type="text/javascript">
+            var answer = Math.floor(Math.random() * 11);
+
+            function clicked() {
+                var guess = document.getElementById('guess');
+                var result = document.getElementById('result');
+                if (guess.value == answer) {
+                    result.className = "winner";
+                    result.innerHTML = '<i class="fa fa-trophy fa-2x"></i> Wicked Job! You won!';
+                } else if (guess.value < answer) {
+                    result.className = "hint";
+                    result.innerHTML = '<i class="fa fa-arrow-circle-o-down"></i>Too low! Guess again.';
+                } else {
+                    result.className = "hint";
+                    result.innerHTML = '<i class="fa fa-arrow-circle-o-up"></i> Too High! Guess again.';
+                }
+            }
+            </script>
+        </div>
+        <hr>
+        <div>
+            <h1>Guessing Game 2: Homework</h1>
+            <p>This is where I'll add my new guessing game for assignment one... as soon as I decide what to do.</p>
+        </div>
+    </section>
+</body>
+
+</html>
