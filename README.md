@@ -1,2 +1,2 @@
 # tripping-octo-avenger
-For CodeFellows Class
+Kate's repo for CodeFellows Class 1
