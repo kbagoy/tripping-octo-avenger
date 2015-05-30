@@ -25,16 +25,20 @@
         <div>
             <h1>Guessing Game 1: In Class Coursework</h1>
             <p>This is the guessing game we built in class, with a few tweaks to styling.</p>
-            <h4>Guess a number between 1 and 10</h4>
-            <input id='guess' />
-            <button class="btn-aqua" onclick='clicked()'>Guess</button>
+            <h4>Guess a number between 1 and 10. You get 3 tries.</h4>
+            <div>
+                <input id='guess' />
+                <button id='submit' onclick='clicked(),maxClicks();'>Guess</button>
+            </div>
             <p id='result' class=""></p>
             <script type="text/javascript">
-            var answer = Math.floor(Math.random() * 11);
+            var answer = Math.floor(Math.random() * (11 - 1) + 1);
+            var count = 0;
 
             function clicked() {
                 var guess = document.getElementById('guess');
                 var result = document.getElementById('result');
+                
                 if (guess.value == answer) {
                     result.className = "winner";
                     result.innerHTML = '<i class="fa fa-trophy fa-2x"></i> Wicked Job! You won!';
@@ -46,6 +50,22 @@
                     result.innerHTML = '<i class="fa fa-arrow-circle-o-up"></i> Too High! Guess again.';
                 }
             }
+
+            function maxClicks () {
+                count++;
+                console.log(count);
+
+            if (count === 3) {
+                    document.getElementById('submit').disabled = true;
+                    result.innerHTML = "<i class='fa fa-frown-o'></i> Game Over! Refresh the page to play again.";
+                    result.className = "gameover";
+                        }            
+            else {
+                document.getElementById('submit').disabled = false;
+
+            }
+        }
+            
             </script>
         </div>
         <hr>

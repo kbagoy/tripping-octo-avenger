@@ -38,10 +38,16 @@
     font-size: 28px;
 }
 
+.gameover {
+    color: #c0392b;
+    font-size: 28px;
+}
+
 .hint {
     color: #7f8c8d;
-    font-size: 14px;
     font-style: italic;
+    margin-top: 25px;
+    font-size: 21px;
 }
 
 .col-half {
