@@ -38,7 +38,7 @@
             function clicked() {
                 var guess = document.getElementById('guess');
                 var result = document.getElementById('result');
-                
+
                 if (guess.value == answer) {
                     result.className = "winner";
                     result.innerHTML = '<i class="fa fa-trophy fa-2x"></i> Wicked Job! You won!';
@@ -51,27 +51,45 @@
                 }
             }
 
-            function maxClicks () {
+            function maxClicks() {
                 count++;
                 console.log(count);
 
-            if (count === 3) {
+                if (count === 3) {
                     document.getElementById('submit').disabled = true;
                     result.innerHTML = "<i class='fa fa-frown-o'></i> Game Over! Refresh the page to play again.";
                     result.className = "gameover";
-                        }            
-            else {
-                document.getElementById('submit').disabled = false;
+                } else {
+                    document.getElementById('submit').disabled = false;
 
+                }
             }
-        }
-            
             </script>
         </div>
         <hr>
         <div>
             <h1>Guessing Game 2: Homework</h1>
-            <p>This is where I'll add my new guessing game for assignment one... as soon as I decide what to do.</p>
+            <p>Q: What is the meaning of life, the universe and everything?</p>
+            <input id="life" />
+            <button type="submit" onclick="giveAnswer();">Submit Your Answer</button>
+            <p id="response" class=""></p>
+            <script type="text/javascript">
+            function giveAnswer() {
+                var userAnswer = document.getElementById('life');
+                response.className = "";     
+
+                if (userAnswer.value === '42') {
+                    response.innerHTML = 'Nice work! You\'re a total nerd! <img src="assets/so-long-and-thanks.jpg"/>';
+                } else {
+                    response.innerHTML = 'Not even close. <img src="assets/marvin_the_paranoid_android_the_hitchhikers_guide_to_the_galaxy_depression.jpg"/>';
+                }
+                setTimeout (
+                    function() {
+                        response.className = "fade";
+                    }
+                    ) 
+            }
+            </script>
         </div>
     </section>
 </body>
