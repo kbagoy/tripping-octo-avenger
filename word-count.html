@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tripping-octo-avenger by kbagoy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/kate.css" media="screen">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Tripping-octo-avenger</h1>
+        <h2 class="project-tagline">Kate's CodeFellows Class</h2>
+        <a href="index.html" class="btn">Home</a><a href="https://github.com/kbagoy/tripping-octo-avenger" class="btn">View on GitHub</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+    <section class="main-content">
+        <h1>Word Count</h1>
+        <form onsubmit="return false">
+            <textarea id='input'>Home sweet home</textarea>
+            <button id="check" onclick='countMe();'>Check My Sentence</button>
+        </form>
+        <script type="text/javascript">
+        // named function
+        function countMe() {
+            var textarea = document.getElementById('input');
+            var sentence = textarea.value;
+            var length = sentence.length;
+            var letters = 0;
+            var words = 1;
+
+            // letter count
+            for (var i = 0; i < length; i++) {
+                if (sentence[i] !== ' ') {
+                    letters++;
+                    console.log(length);
+                }
+            // word count
+                else {
+                    words++;
+                    console.log(words);
+                }
+            }
+        }
+        </script>
+    </section>
+</body>
+
+</html>
