@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+    function createAnimal(name, speed) {
+        var animal = {};
+        animal.name = name;
+        animal.distance = 0;
+        animal.speed = speed;
+        animal.run = function() {
+            this.distance = this.distance + this.speed;
+        };
+        return animal;
+    }
+
+    var sloth = createAnimal('sloth', 1);
+    var bear = createAnimal('bear', 10);
+    var goat = createAnimal('goat', 5);
+
+    var animals = [sloth, bear, goat];
+
+    function run(){
+    	var animal;
+        for( var j = 0; j < animals.length; j++ ) {
+            animal = animals[j];
+            animal.run();
+			console.log(animal.name, animal.distance);        
+		}
+	}
+
+    run();
+
+   
+
+    console.log(sloth);
+    console.log(bear);
+    console.log(goat);
+    console.log(run() );
+    
+
+
+    /*var sloth = {};
+    sloth.animal = 'sloth';
+    sloth.speed = 1;
+    sloth.size = 'medium';
+    sloth.distance = 2;
+    sloth.cuteness = 'extreme';
+    sloth.run = function() {
+    	this.distance = this.distance + this.speed;
+    };
+
+    var bear = {};
+    bear.animal = 'bear';
+    bear.speed = 8;
+    bear.size = 'huge';
+    bear.cuteness = 'high'
+
+    var goat = {};
+    goat.animal = 'goat';
+    goat.speed = 5 ;
+    goat.size = 'medium';
+    goat.cuteness ='medium';
+    */
+    </script>
+</body>
+
+</html>

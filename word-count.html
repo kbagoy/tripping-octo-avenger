@@ -22,16 +22,23 @@
         <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
     </section>
     <section class="main-content">
+        <div style="float:left;">
         <h1>Word Count</h1>
-        <form onsubmit="return false">
-            <textarea id='input'>Home sweet home</textarea>
-            <button id="check" onclick='countMe();'>Check My Sentence</button>
-        </form>
+            <textarea id='input' rows="10" cols="50">Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor... Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</textarea>
+            <button id="check" style="display:flex;" onclick='countMe();'>Check My Sentence</button>
+        </div>
+        <div style="float:right; width: 275px; min-height:275px; padding: 9px 14px;  margin: 60px auto; background-color: #f7f7f9;  border: 1px solid #e1e1e8; border-radius: 4px;">
+            <h2>Results</h2>
+            <p id="lettercount"></p>
+            <p id="wordcount"></p>
+            <p id="scount"></p>
+        </div>
         <script type="text/javascript">
+        var textarea = document.getElementById('input');
+        var sentence = textarea.value;
+
         // named function
         function countMe() {
-            var textarea = document.getElementById('input');
-            var sentence = textarea.value;
             var length = sentence.length;
             var letters = 0;
             var words = 1;
@@ -44,11 +51,25 @@
                 }
             // word count
                 else {
+                    sentence.trim();
                     words++;
                     console.log(words);
+                    lettercount.innerHTML = 'Characters: ' + letters;
+                    wordcount.innerHTML = 'Words: ' + words;
                 }
             }
+            // sentence count
+            var sentence2 = 0;
+            for (var i = 0; i < length; i++) {
+                if (sentence[i] == '.' ) {
+                    sentence2++;
+                    console.log(sentence2);
+                    scount.innerHTML = 'Sentences: ' + sentence2 ;
+                }
+            
         }
+       
+                    }
         </script>
     </section>
 </body>

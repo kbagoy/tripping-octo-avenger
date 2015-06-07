@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1 id="name"><h1>
+
+<script>
+
+function createAnimal(name, speed) {
+	var animal = {};
+		animal.name = name;
+		animal.distance = 0;
+		animal.speed = 12;
+		animal.run = function() {
+			this.distance = this.distance + this.speed;
+		};
+		return animal;
+}
+
+var hare = createAnimal( 'rabbit', 12);
+var tortoise = createAnimal('turle', 2);
+
+console.log(hare.distance, tortoise.distance);
+}
+
+/*
+banana = 'monkey food';
+
+//create a reusable object
+
+var hare = {};
+hare.animal = 'rabbit';
+hare.speed = 'fast';
+hare.height = 12;
+hare.distance = 0;
+hare.speed = 12;
+hare.run = function() {
+	this.distance = this.distance + this.speed;
+}
+
+var tortoise = {};
+tortoise.animal = 'turtle'
+
+console.log(hare);
+console.log(tortoise);
+
+//create a single object
+var turtle = {
+ animal: 'tortoise',
+ speed: 'slow',
+ height: 6,
+ competitor: hare
+}
+
+ console.log(turtle);
+ console.log(banana);
+
+ turtle.sayHello = function(){
+ 	return this.animal + ' says hi';
+ }
+
+	console.log(turtle.sayHello() );
+	console.log(hare.run() );
+
+
+function foo(){
+	document
+}
+*/
+</script>
+
+
+
+</body>
+
+</html>
