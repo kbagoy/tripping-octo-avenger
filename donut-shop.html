@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+    function createDonutShop(location, open, close, minCust, maxCust, avgPerCust) {
+        var donutShop = {};
+        donutShop.location = location;
+        donutShop.open = 0;
+        donutShop.close = 0;
+        donutShop.minCust = 0;
+        donutShop.maxCust = 0;
+        donutShop.avgPerCust = 0;
+    };
+
+    console.log(donutShop);
+
+    var downtown = createDonutShop('Downtown', 0600, 1400, 8, 43, 4.5);
+    var alberta = createDonutShop('Albeta', 1000, 1800, 4, 37, 2);
+    var hawthorn = createDonutShop('Hawthorn', 0900, 1700, 9, 23, 6.33);
+    var sellwood = createDonutShop('Sellwood', 1100, 1500, 2, 28, 1.25);
+    var sandy = createDonutShop('Sandy', 0500, 1500, 8, 58, 4.5);
+
+    var donutShops = [downtown, alberta, hawthorn, sellwood, sandy];
+
+    function listHours() {
+            var donutShop;
+            for (var i = 0; i < donutShops.length; i++) {
+                donutShop = donutShops[i];
+                console.log(donutShop.location);
+            }
+        }
+
+            console.log(downtown);
+            console.log(alberta);
+            console.log(sellwood);
+            console.log(hawthorn);
+            console.log(sandy);
+
+    </script>
+    <!--stashing bits and pieces of code that I can't fucking get to work. I hate javascript so fucking much it's not funny.
+
+    donutShop.openHours = function() {
+            this.hours = open + close;
+            //*this.hoursPerDay = ((this.open - this.close)/-100);
+            return hours;
+
+    function listHours() {
+        var donutShop;
+        for (var i = 0; i < donutShops.length; i++) {
+            donutShop = donutShops[i];
+            donutShop.openHours();
+            console.log(donutShop.location, donutShop.hours);
+        }
+    }
+-->
+</body>
+
+</html>
