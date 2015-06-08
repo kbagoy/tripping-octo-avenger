@@ -1,32 +1,17 @@
 #projects-list {
     padding: 1em;
 }
-
 #projects-list li {
+    margin-top: 2em;
     list-style: none;
     display: inline-block;
     padding: 3em 2em;
-    color: #fff;
-}
-
-#projects-list li:first-child {
     background-color: #16a085;
 }
 
-#projects-list li:nth-child(2) {
-    background-color: #2980b9;
-}
-
-#projects-list li:nth-child(3) {
-    background-color: #f39c12;
-}
-
-#projects-list li:nth-child(4) {
-    background-color: #34495e;
-}
-
-#projects-list li:nth-child(5) {
-    background-color: #2ecc71;
+#projects-list a li{
+    color: #fff;
+    text-decoration: none;
 }
 
 #result {
