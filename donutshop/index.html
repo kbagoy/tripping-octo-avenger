@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Little Donut Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,100' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#downtown">Downtown</a></li>
+            <li>Alberta</li>
+            <li>Hawthorn</li>
+            <li>Sellwood</li>
+            <li>Sandy</li>
+        </ul>
+
+    </nav>
+    <header>
+        <div>
+        <h1>Welcome to My Little Donut Shop</h1>
+        <h2>Where we make sweets to eats</h2>
+        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</i></p>
+        </div>
+    </header>
+    <main>
+    <section id="downtown">
+        <div class="left-small">
+            <h3>Downtown</h3>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            </p>
+        </div>
+        <div class="right">
+            <h2>Today's Metrics</h2>
+            <table>
+                <tr>
+                    <th>Customers Served</th>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <th>Donuts Made</th>
+                    <td>578</td>
+                </tr>
+                <tr>
+                    <th>Donuts Sold</th>
+                    <td>578</td>
+                </tr>
+                <th></th>
+                <td></td>
+                <tr>
+                </tr>
+                <tr>
+                    <th>Cost of Donuts Made</th>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <th>Total Sales</th>
+                    <td>$2312</td>
+                </tr>
+                <tr>
+                    <th>Net Profit</th>
+                    <td>$2262</td>
+                </tr>
+            </table>
+        </div>
+        
+    </section>
+    </main>
+    
+    
+    <footer>
+        <p> &copy; 2015 Kate Bagoy Global Enterprises LLC Inc DBA Something.
+        </p>
+    </footer>
+    <script>
+    function DonutShop(location, open, close, minCust, maxCust, avgPerCust) {
+        this.location = location;
+        this.open = open;
+        this.close = close;
+        this.minCust = minCust;
+        this.maxCust = maxCust;
+        this.avgPerCust = avgPerCust;
+        this.openHours = function() {
+            return ((this.close - this.open) / 100);
+        };
+        this.custPerHour = function() {
+            return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+        };
+        this.makeDonuts = function(customers) {
+            var hours = this.openHours();
+            var donutsNeeded = (hours * customers);
+            return donutsNeeded;
+        };
+    }
+
+    var downtown = new DonutShop('Downtown', '0600', '1600', 8, 43, 4.5);
+    var alberta = new DonutShop('Albeta', '1000', '2000', 4, 37, 2);
+    var hawthorn = new DonutShop('Hawthorn', '0900', '1700', 9, 23, 6.33);
+    var sellwood = new DonutShop('Sellwood', '1100', '1500', 2, 28, 1.25);
+    var sandy = new DonutShop('Sandy', '0500', '1500', 8, 58, 3.75);
+
+    var donutShops = [downtown, alberta, hawthorn, sellwood, sandy];
+
+    function listHours() {
+        var donutShop, cust;
+        for (var i = 0; i < donutShops.length; i++) {
+            donutShop = donutShops[i];
+            console.log(donutShop);
+            console.log(donutShop.openHours() + ' hours open');
+            cust = donutShop.custPerHour();
+            console.log(cust + ' customers per hour');
+            console.log(donutShop.makeDonuts(cust) + ' donuts to make today');
+        }
+    }
+
+    listHours();
+
+    //Extend script to make random number per open hours:
+    //var hours = new array(openHours-1),
+    //for (var i =0, i < hours.length, i++){
+    //hours[i] = {getRandomInt(min, max);
+    //    }
+    </script>
+</body>
+
+</html>

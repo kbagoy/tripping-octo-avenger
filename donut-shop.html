@@ -20,24 +20,23 @@
         <a href="https://github.com/kbagoy/tripping-octo-avenger/zipball/master" class="btn">Download .zip</a>
         <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
     </section>
+
     <section class="main-content">
-        <h1>Donut Shop Homework 1</h1>
-        
+        <header>
+            <h1>My Donut Shop</h1>
+            <h2>Multiple Iterations of CodeFellows Homework</h2>
+        </header>
+
+        <h3>Homework 1: Write the script</h3>
         <p><b>Updated 8/8 at 5:40pm </b> : It Works!! I had a little help at the end from my friend. I was getting wonky results because I was calling custperhour twice, thus setting a different random number for the make donuts calc. By storing the call as "cust" and resuing the variable I've got some results that seem to work. Woot!</p>
         <p> Updated gist</p>
         <script src="https://gist.github.com/kbagoy/72d7cdff9b4e4e9ed74f.js"></script>
-
         <p><b>Updated 8/8 at 5pm </b> : Now calculates hours &amp; prints to console. This is not technically very correct for dealing with times, but I figure it's a good start for this project. Will add logic for assigning random donuts shortly.</p>
-
         <p> Updated gist</p>
         <script src="https://gist.github.com/kbagoy/c0454c5a838b393380c4.js"></script>
-
-
         <p>This doesn't work at all. I've spent 3 hours on it (after 3 hours redoing codecademy tuts) and I can't even get the damn locations to print out, much less get started on calculating hours or building out functions for anything else. I'm so frustrated that I'm steaming out of my ears, but I don't know what else to do, so I'm going to just submit this shit as it is and go to bed.</p>
-        
         <p> Original gist:</p>
         <script src="https://gist.github.com/kbagoy/d4fed203190bc2f64771.js"></script>
-        
         <script>
         function DonutShop(location, open, close, minCust, maxCust, avgPerCust) {
             this.location = location;
@@ -52,7 +51,7 @@
             this.custPerHour = function() {
                 return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
             };
-            this.makeDonuts = function(customers){
+            this.makeDonuts = function(customers) {
                 var hours = this.openHours();
                 var donutsNeeded = (hours * customers);
                 return donutsNeeded;

@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+}
+
+
+h1 {
+	font-size: 68px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 900;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 36px;
+	font-weight: 100;
+	text-transform: uppercase;
+
+}
+
+p {
+	font-size: 18px;
+	line-height: 2.5;
+}
+nav {
+    min-height: 70px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: black;
+}
+
+nav ul {
+    float: right;
+    padding-right: 5%;
+}
+
+nav li {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+}
+
+header {
+    margin-top: 70px;
+    height: 700px;
+	text-align: center;
+    background-image: url("../assets/donuts-donuts.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header div {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    padding: 8em 18em;
+    color: white;
+}
+
+#downtown {
+    height: 400px;
+    background-color: #ecf0f1;
+}
+
+.left-small {
+    float: left;
+    width: 40%;
+    padding: 2em;
+
+}
+
+.right {
+	height: 100%;
+	float: right;
+	width: 40%;
+	text-align: left;
+	background-color: black;
+	color: white;
+    padding: 2em;
+    box-sizing: border-box;
+
+}
