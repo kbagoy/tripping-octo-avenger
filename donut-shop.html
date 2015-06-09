@@ -24,62 +24,48 @@
     <section class="main-content">
     <h1>Donut Shop Homework 1</h1>
     <p>This doesn't work at all. I've spent 3 hours on it (after 3 hours redoing codecademy tuts) and I can't even get the damn locations to print out, much less get started on calculating hours or building out functions for anything else. I'm so frustrated that I'm steaming out of my ears, but I don't know what else to do, so I'm going to just submit this shit as it is and go to bed.<p>
-        <p> Here is the gist:</p>
+        <p><b>Updated 8/8 at 5pm </b> : Now calculates hours &amp; prints to console. This is not technically very correct for dealing with times, but I figure it's a good start for this project. Will add logic for assigning random donuts shortly.</p>
+        <p> Updated gist</p>
+        <script src="https://gist.github.com/kbagoy/c0454c5a838b393380c4.js"></script>
+        <p> Original gist:</p>
         <script src="https://gist.github.com/kbagoy/d4fed203190bc2f64771.js"></script>
 
     <script>
-    function createDonutShop(location, open, close, minCust, maxCust, avgPerCust) {
-        var donutShop = {};
-        donutShop.location = location;
-        donutShop.open = 0;
-        donutShop.close = 0;
-        donutShop.minCust = 0;
-        donutShop.maxCust = 0;
-        donutShop.avgPerCust = 0;
+    function DonutShop(location, open, close, minCust, maxCust, avgPerCust, openHours) {
+        this.location = location;
+        this.open = open;
+        this.close = close;
+        this.minCust = minCust;
+        this.maxCust = maxCust;
+        this.avgPerCust = avgPerCust;
+        this.openHours = function() {
+            this.openHours = ((this.close - this.open) / 100);
+            return this.openHours;
+        }
     };
 
-    console.log(donutShop);
-
-    var downtown = createDonutShop('Downtown', 0600, 1400, 8, 43, 4.5);
-    var alberta = createDonutShop('Albeta', 1000, 1800, 4, 37, 2);
-    var hawthorn = createDonutShop('Hawthorn', 0900, 1700, 9, 23, 6.33);
-    var sellwood = createDonutShop('Sellwood', 1100, 1500, 2, 28, 1.25);
-    var sandy = createDonutShop('Sandy', 0500, 1500, 8, 58, 4.5);
+    var downtown = new DonutShop('Downtown', '0600', '1600', 8, 43, 4.5);
+    var alberta = new DonutShop('Albeta', '1000', '2000', 4, 37, 2);
+    var hawthorn = new DonutShop('Hawthorn', '0900', '1700', 9, 23, 6.33);
+    var sellwood = new DonutShop('Sellwood', '1100', '1500', 2, 28, 1.25);
+    var sandy = new DonutShop('Sandy', '0500', '1500', 8, 58, 4.5);
 
     var donutShops = [downtown, alberta, hawthorn, sellwood, sandy];
-
-    function listHours() {
-            var donutShop;
-            for (var i = 0; i < donutShops.length; i++) {
-                donutShop = donutShops[i];
-                console.log(donutShop.location);
-            }
-        }
-
-            console.log(downtown);
-            console.log(alberta);
-            console.log(sellwood);
-            console.log(hawthorn);
-            console.log(sandy);
-
-    </script>
-    </section>
-    <!--stashing bits and pieces of code that I can't fucking get to work. I hate javascript so fucking much it's not funny.
-
-    donutShop.openHours = function() {
-            this.hours = open + close;
-            //*this.hoursPerDay = ((this.open - this.close)/-100);
-            return hours;
 
     function listHours() {
         var donutShop;
         for (var i = 0; i < donutShops.length; i++) {
             donutShop = donutShops[i];
-            donutShop.openHours();
-            console.log(donutShop.location, donutShop.hours);
+            console.log(donutShop);
+            console.log(donutShop.openHours());
         }
     }
--->
+
+    listHours();
+
+    </script>
+    </section>
+
 </body>
 
 </html>
