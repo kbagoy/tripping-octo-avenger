@@ -13,59 +13,75 @@
 </head>
 
 <body>
-
     <section class="page-header">
-      <h1 class="project-name">Tripping-octo-avenger</h1>
-      <h2 class="project-tagline">Kate's CodeFellows Class</h2>
-      <a href="index.html" class="btn">Home</a><a href="https://github.com/kbagoy/tripping-octo-avenger" class="btn">View on GitHub</a>
-      <a href="https://github.com/kbagoy/tripping-octo-avenger/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
+        <h1 class="project-name">Tripping-octo-avenger</h1>
+        <h2 class="project-tagline">Kate's CodeFellows Class</h2>
+        <a href="index.html" class="btn">Home</a><a href="https://github.com/kbagoy/tripping-octo-avenger" class="btn">View on GitHub</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/kbagoy/tripping-octo-avenger/tarball/master" class="btn">Download .tar.gz</a>
     </section>
     <section class="main-content">
-    <h1>Donut Shop Homework 1</h1>
-    <p>This doesn't work at all. I've spent 3 hours on it (after 3 hours redoing codecademy tuts) and I can't even get the damn locations to print out, much less get started on calculating hours or building out functions for anything else. I'm so frustrated that I'm steaming out of my ears, but I don't know what else to do, so I'm going to just submit this shit as it is and go to bed.<p>
+        <h1>Donut Shop Homework 1</h1>
+        
+        <p><b>Updated 8/8 at 5:40pm </b> : It Works!! I had a little help at the end from my friend. I was getting wonky results because I was calling custperhour twice, thus setting a different random number for the make donuts calc. By storing the call as "cust" and resuing the variable I've got some results that seem to work. Woot!</p>
+        <p> Updated gist</p>
+        <script src="https://gist.github.com/kbagoy/72d7cdff9b4e4e9ed74f.js"></script>
+
         <p><b>Updated 8/8 at 5pm </b> : Now calculates hours &amp; prints to console. This is not technically very correct for dealing with times, but I figure it's a good start for this project. Will add logic for assigning random donuts shortly.</p>
+
         <p> Updated gist</p>
         <script src="https://gist.github.com/kbagoy/c0454c5a838b393380c4.js"></script>
+
+
+        <p>This doesn't work at all. I've spent 3 hours on it (after 3 hours redoing codecademy tuts) and I can't even get the damn locations to print out, much less get started on calculating hours or building out functions for anything else. I'm so frustrated that I'm steaming out of my ears, but I don't know what else to do, so I'm going to just submit this shit as it is and go to bed.</p>
+        
         <p> Original gist:</p>
         <script src="https://gist.github.com/kbagoy/d4fed203190bc2f64771.js"></script>
-
-    <script>
-    function DonutShop(location, open, close, minCust, maxCust, avgPerCust, openHours) {
-        this.location = location;
-        this.open = open;
-        this.close = close;
-        this.minCust = minCust;
-        this.maxCust = maxCust;
-        this.avgPerCust = avgPerCust;
-        this.openHours = function() {
-            this.openHours = ((this.close - this.open) / 100);
-            return this.openHours;
+        
+        <script>
+        function DonutShop(location, open, close, minCust, maxCust, avgPerCust) {
+            this.location = location;
+            this.open = open;
+            this.close = close;
+            this.minCust = minCust;
+            this.maxCust = maxCust;
+            this.avgPerCust = avgPerCust;
+            this.openHours = function() {
+                return ((this.close - this.open) / 100);
+            };
+            this.custPerHour = function() {
+                return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+            };
+            this.makeDonuts = function(customers){
+                var hours = this.openHours();
+                var donutsNeeded = (hours * customers);
+                return donutsNeeded;
+            };
         }
-    };
 
-    var downtown = new DonutShop('Downtown', '0600', '1600', 8, 43, 4.5);
-    var alberta = new DonutShop('Albeta', '1000', '2000', 4, 37, 2);
-    var hawthorn = new DonutShop('Hawthorn', '0900', '1700', 9, 23, 6.33);
-    var sellwood = new DonutShop('Sellwood', '1100', '1500', 2, 28, 1.25);
-    var sandy = new DonutShop('Sandy', '0500', '1500', 8, 58, 4.5);
+        var downtown = new DonutShop('Downtown', '0600', '1600', 8, 43, 4.5);
+        var alberta = new DonutShop('Albeta', '1000', '2000', 4, 37, 2);
+        var hawthorn = new DonutShop('Hawthorn', '0900', '1700', 9, 23, 6.33);
+        var sellwood = new DonutShop('Sellwood', '1100', '1500', 2, 28, 1.25);
+        var sandy = new DonutShop('Sandy', '0500', '1500', 8, 58, 3.75);
 
-    var donutShops = [downtown, alberta, hawthorn, sellwood, sandy];
+        var donutShops = [downtown, alberta, hawthorn, sellwood, sandy];
 
-    function listHours() {
-        var donutShop;
-        for (var i = 0; i < donutShops.length; i++) {
-            donutShop = donutShops[i];
-            console.log(donutShop);
-            console.log(donutShop.openHours());
+        function listHours() {
+            var donutShop, cust;
+            for (var i = 0; i < donutShops.length; i++) {
+                donutShop = donutShops[i];
+                console.log(donutShop);
+                console.log(donutShop.openHours() + ' hours open');
+                cust = donutShop.custPerHour();
+                console.log(cust + ' customers per hour');
+                console.log(donutShop.makeDonuts(cust) + ' donuts to make today');
+            }
         }
-    }
 
-    listHours();
-
-    </script>
+        listHours();
+        </script>
     </section>
-
 </body>
 
 </html>
