@@ -1,3 +1,5 @@
+/*Color Reference: Yellow: #f1c40f; turquoise: #1abc9c; silver: #bdc3c7;*/
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -43,15 +45,13 @@ nav li {
     padding: 1em;
 }
 
-nav li a {
+nav li a, nav li a:visited  {
     text-decoration: none;
     color: white;
-
 }
 
-nav li a:visited {
-    text-decoration: none;
-    color: white;
+nav li a:hover {
+    color: #1abc9c;
 }
 
 header {
@@ -157,9 +157,11 @@ footer p {
 .contact {
     background-color: rgba(100, 100, 0, 0.31);
     float: right;
-    width: 55%;
-    height: 10%;
-    padding: 2em;
+    width: 60%;
+    height: 20%;
+    padding: 1em;
+    margin-top: 10%;
+    box-sizing: border-box;
 
 }
 
