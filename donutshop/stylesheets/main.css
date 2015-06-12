@@ -8,22 +8,22 @@ body {
 
 
 h1 {
-	font-size: 68px;
+	font-size: 5em;
 	font-family: 'Playfair Display', serif;
 	font-weight: 900;
 	line-height: 1;
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 2em;
 	font-weight: 100;
 	text-transform: uppercase;
 
 }
 
 p {
-	font-size: 18px;
-	line-height: 2.5;
+	font-size: 1em;
+	line-height: 2;
 }
 nav {
     min-height: 70px;
@@ -40,6 +40,17 @@ nav ul {
     margin: 2em auto;
 }
 
+.logo {
+    float: left;
+}
+
+nav h2 {
+    color: white;
+    display: inline;
+    font-size: 24px;
+    line-height: 3;
+}
+
 nav li {
     display: inline;
     padding: 1em;
@@ -48,10 +59,14 @@ nav li {
 nav li a, nav li a:visited  {
     text-decoration: none;
     color: white;
+    transition: all .2s ease-in-out;
 }
+
 
 nav li a:hover {
     color: #1abc9c;
+    transform: scaleX(50px);
+    transform: rotateX(3deg);
 }
 
 header {
@@ -133,6 +148,7 @@ footer p {
     float: left;
     width: 50%;
     padding: 2em;
+    color: white;
 
 }
 
@@ -184,3 +200,50 @@ footer p {
     box-sizing: border-box;
 
 }
+
+@media screen and (max-width: 600px) {
+   nav ul {
+        line-height: 2em;
+   }
+
+   header  { 
+    height: 550px;
+    }
+
+   header div{
+    padding: 8em 1em;
+   }
+
+   h1 {
+    font-size: 2.8em;
+   }
+
+   h2 {
+    font-size: 1.4em;
+   }
+   p {
+    line-height: 1.5;
+   }
+
+   .contact , #overview .right-box {
+    visibility: hidden;
+   }
+
+   #overview {
+    height: 256px;
+   }
+   #downtown, #alberta, #hawthorn,
+    #sellwood, #sandy {
+        background-image: none;
+        height: 500px;
+}
+
+.left, .left-box, .right, .right-box {
+    float: none;
+    width: 100%;
+
+}
+
+
+
+  }
