@@ -6,25 +6,30 @@ body {
     line-height: 1;
 }
 
-
 h1 {
-	font-size: 5em;
-	font-family: 'Playfair Display', serif;
-	font-weight: 900;
-	line-height: 1;
+    font-size: 5em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    line-height: 1;
 }
 
 h2 {
-	font-size: 2em;
-	font-weight: 100;
-	text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 100;
+    text-transform: uppercase;
+}
 
+h1,
+h2,
+h3 {
+    text-align: center;
 }
 
 p {
-	font-size: 1em;
-	line-height: 2;
+    font-size: 1em;
+    line-height: 2;
 }
+
 nav {
     min-height: 70px;
     position: fixed;
@@ -32,6 +37,7 @@ nav {
     left: 0;
     top: 0;
     background-color: black;
+    z-index: 1;
 }
 
 nav ul {
@@ -56,12 +62,12 @@ nav li {
     padding: 1em;
 }
 
-nav li a, nav li a:visited  {
+nav li a,
+nav li a:visited {
     text-decoration: none;
     color: white;
     transition: all .2s ease-in-out;
 }
-
 
 nav li a:hover {
     color: #1abc9c;
@@ -72,7 +78,7 @@ nav li a:hover {
 header {
     margin-top: 70px;
     height: 700px;
-	text-align: center;
+    text-align: center;
     background-image: url("../assets/donuts-donuts.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -85,9 +91,12 @@ header div {
     color: white;
 }
 
+table {
+    margin: auto;
+}
+
 th {
     padding: .5em;
-
 }
 
 footer {
@@ -108,15 +117,21 @@ footer p {
     background-color: #1abc9c;
 }
 
+#downtown,
+#alberta,
+#hawthorn,
+#sellwood,
+#sandy {
+    height: 500px;
+}
+
 #downtown {
-    height: 400px;
     background-image: url("../assets/downtown.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #alberta {
-    height: 400px;
     background-color: #e67e22;
     background-image: url("../assets/alberta.jpg");
     background-size: cover;
@@ -124,21 +139,18 @@ footer p {
 }
 
 #hawthorn {
-    height: 400px;
     background-image: url("../assets/hawthorn.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #sellwood {
-    height: 400px;
     background-image: url("../assets/sellwood.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #sandy {
-    height: 400px;
     background-image: url("../assets/sandy.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -149,19 +161,17 @@ footer p {
     width: 50%;
     padding: 2em;
     color: white;
-
 }
 
 .right-box {
-	height: 100%;
-	float: right;
-	width: 40%;
-	text-align: left;
-	background-color: black;
-	color: white;
+    height: 100%;
+    float: right;
+    width: 40%;
+    text-align: left;
+    background-color: black;
+    color: white;
     padding: 2em;
     box-sizing: border-box;
-
 }
 
 .right {
@@ -178,15 +188,19 @@ footer p {
     padding: 1em;
     margin-top: 10%;
     box-sizing: border-box;
-
 }
 
-.contact p {
+.contact li {
     font-size: 14px;
     line-height: 1;
     color: white;
-    display: inline-block;;
+    display: inline-block;
     padding-right: 1em;
+    border-right: 1px solid white;
+}
+
+.contact li:last-child {
+    border-right: none;
 }
 
 .left-box {
@@ -198,52 +212,105 @@ footer p {
     color: white;
     padding: 2em;
     box-sizing: border-box;
+}
+/* General button style (reset) */
 
+.btn {
+    border: 3px solid #fff;
+    color: #fff;
+    background: black;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+    color: black;
+    background: #fff;
 }
 
 @media screen and (max-width: 600px) {
-   nav ul {
+    body {
+        text-align: center;
+    }
+    nav ul {
         line-height: 2em;
-   }
+    }
+    header {
+        height: 550px;
+    }
+    header div {
+        padding: 8em 1em;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    p {
+        line-height: 1.5;
+    }
+    .btn {
+        padding: 25px;
+    }
+    
+    #overview .right-box {
+        display: none;
+    }
+    .contact {
+        width: 100%;
+        padding: 1em;
+        margin: 0;
+        height: 100px;
+        background-color: #1abc9c;
 
-   header  { 
-    height: 550px;
+    }
+    #overview {
+        height: 256px;
+    }
+    #downtown,
+    #alberta,
+    #hawthorn,
+    #sellwood,
+    #sandy {
+        background-image: none;
+        height: 550px;
+    }
+    #alberta,
+    #hawthorn,
+    #sellwood,
+    #sandy {
+        border-top: 3px solid white;
     }
 
-   header div{
-    padding: 8em 1em;
-   }
-
-   h1 {
-    font-size: 2.8em;
-   }
-
-   h2 {
-    font-size: 1.4em;
-   }
-   p {
-    line-height: 1.5;
-   }
-
-   .contact , #overview .right-box {
-    visibility: hidden;
-   }
-
-   #overview {
-    height: 256px;
-   }
-   #downtown, #alberta, #hawthorn,
-    #sellwood, #sandy {
-        background-image: none;
-        height: 500px;
+    .left,
+    .left-box,
+    .right,
+    .right-box {
+        float: none;
+        width: 100%;
+        height: 450px;
+    }
 }
-
-.left, .left-box, .right, .right-box {
-    float: none;
-    width: 100%;
-
-}
-
-
-
-  }
