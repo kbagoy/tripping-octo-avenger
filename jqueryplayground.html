@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Basic jQuery Pattern</title>
+        
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            li {
+                cursor: pointer;
+
+            }
+            .class1 {
+                font-size: 28px;
+                background-color: aliceblue;
+                padding-left: 1em;
+            }
+            #red {
+                color: #c0392b;
+            }
+            #blue {
+                color: #2980b9;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <h1>Colors</h1>
+
+        <p>Hello</p>
+
+        <ul id='list'></ul>
+        <ul id='list2'></ul>
+        <button id="move">Move</button>
+
+        
+ 
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        
+        <!-- <script src="js/main.js"></script> -->
+        <script>
+
+            // find the target element
+            var $list = $('#list');
+            var $list2 = $('#list2');
+
+            // out data
+            var colors = ['red', 'blue', 'green', 'purple', 'orange', 'goldenrod'];
+
+            // loop through the data and append to target element
+            colors.forEach(function(color, index) {
+                var $color = $('<li></li>'); //create html elements
+                
+                $color.attr('data-custom', 'foo'); //add an attribute
+                //$color.css('color', color); //adds inline style
+                $color.attr('id', color); //create id with color name
+                $color.text(color + ' ' + index); //insert this text
+                $list.append($color); //replace this text from the array
+                //if (index % 2 === 0) {
+                //    $color.addClass ('class1');
+                //}
+
+                var $name = $('<span></span>')
+                    .text(' Index is ' + index)
+                    .css({
+                        color: 'black',
+                        textWeight: 500,
+                        textTransform: 'uppercase',
+                        // display: 'block',
+                        paddingLeft: '10px'
+                    })
+                    .appendTo($color);
+                $color.appendTo($list);
+                $color.click(function(){
+                    $(this).toggleClass('class1');
+                })
+                });
+
+                
+
+            $list.css ({
+                lineHeight: 2,
+                listStyle: 'none'
+            })
+
+            $list.animate ({
+                fontSize: '20px'
+            })
+
+            $('#move').click(function(){
+                var $selected = $('#list .class1')
+                    .removeClass('class1')
+                    .appendTo($list2);
+            })
+
+
+            
+
+        </script>
+    </body>
+</html>
+
+
+<!--var $name = $('<span></span>')
+                    .text(' Index is ' + index)
+                    .css('color', 'black')
+                    .appendTo($color);-->
