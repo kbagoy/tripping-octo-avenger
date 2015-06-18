@@ -42,7 +42,7 @@ function Franchise(name, open, close, minCust, maxCust, avgPerCust, pricePerDonu
 }
 
 //Console log all the hours and items
-function consoleLogEverthing() {
+function calculateEverything() {
 
     var franchiseLocation;
     for (var i = 0; i < donutFranchises.length; i++) {
@@ -66,7 +66,9 @@ function consoleLogEverthing() {
         console.log('$ ' + (sales * 365) + ' Annual Sales');
         console.log('$ ' + (cogs * 365) + ' Annual Cogs');
         console.log('$ ' + (profit * 265) + ' Annual Profit');
+
     }
+
     //Replace the text for daily items
     if (dailyDonutsSold.length > 0) {
         for (var j = 0; j < dailyDonutsSold.length; j++) {
@@ -122,5 +124,5 @@ function consoleLogEverthing() {
 
 }
 
-//Call consoleLogEverthing function immediately
-consoleLogEverthing();
+//Call calculateEverything function immediately
+calculateEverything();
