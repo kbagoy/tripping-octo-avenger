@@ -98,6 +98,9 @@ table {
 th {
     padding: .5em;
 }
+td {
+    padding: .5em 1em;
+}
 
 footer {
     background-color: black;
