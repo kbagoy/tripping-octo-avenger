@@ -21,7 +21,7 @@ var annualSales = document.querySelectorAll('td.annual-sales');
 var annualProfits = document.querySelectorAll('span.annual-profit');
 
 //Create the donut shops `d calculate the hours
-function Franchise(name, open, close, minCust, maxCust, avgPerCust, pricePerDonut, costPerDonut) {
+function Franchise(name, open, close, minCust, maxCust, avgPerCust, pricePerDonut, costPerDonut, donuts) {
     this.name = name;
     this.open = open;
     this.close = close;
@@ -39,6 +39,7 @@ function Franchise(name, open, close, minCust, maxCust, avgPerCust, pricePerDonu
     this.customerPerDay = function() {
         return (this.dailyOpenHours() * this.randomCustPerHour());
     };
+
 }
 
 //Console log all the hours and items
@@ -55,81 +56,60 @@ function calculateEverything() {
         var cogs = (donuts * franchiseLocation.costPerDonut);
         var sales = (donuts * franchiseLocation.pricePerDonut);
         var profit = (sales - cogs);
-        console.log(hours + ' hours open per day');
-        console.log(customers + ' Average customers per day');
-        console.log(donuts + ' donuts made and sold');
-        console.log('$ ' + sales + ' Daily Sales');
-        console.log('$ ' + cogs + ' Daily Cogs');
-        console.log('$ ' + profit + ' Daily Profit');
-        console.log((customers * 365) + ' Customers per yer');
-        console.log((donuts * 365) + ' donuts made and sold per year');
-        console.log('$ ' + (sales * 365) + ' Annual Sales');
-        console.log('$ ' + (cogs * 365) + ' Annual Cogs');
-        console.log('$ ' + (profit * 265) + ' Annual Profit');
-
-
+        console.log(hours, customers, donuts, cogs, sales, profit);
     }
 
+    
     //Replace the text for daily items
     if (dailyDonutsSold.length > 0) {
         for (var j = 0; j < dailyDonutsSold.length; j++) {
-            dailyDonutsSold[j].textContent = Math.round(franchiseLocation[j].donuts);
-            j++;
+            dailyDonutsSold[j].textContent = Math.round(donuts);
         }
     }
     if (dailyCustomers.length > 0) {
         for (var k = 0; k < dailyCustomers.length; k++) {
-            dailyCustomers[k].textContent = Math.round(franchiseLocation[k].customers);
-            k++;
+            dailyCustomers[k].textContent = Math.round(customers);
         }
     }
     if (dailyCogs.length > 0) {
         for (var l = 0; l < dailyCogs.length; l++) {
-            dailyCogs[l].textContent = Math.round(franchiseLocation[l].cogs);
-            l++;
+            dailyCogs[l].textContent = Math.round(cogs);
         }
     }
     if (dailySales.length > 0) {
         for (var m = 0; m < dailySales.length; m++) {
-            dailySales[m].textContent = ('$' + Math.round(franchiseLocation[m].sales));
-            m++;
+            dailySales[m].textContent = ('$' + Math.round(sales));
         }
     }
     if (dailyProfits.length > 0) {
         for (var n = 0; n < dailyProfits.length; n++) {
-            dailyProfits[n].textContent = Math.round(franchiseLocation[n].profit);
-            n++;
+            dailyProfits[n].textContent = Math.round(profit);
         }
     }
     //Replace the text for annual items
     if (annualDonutsSold.length > 0) {
         for (var o = 0; o < annualDonutsSold.length; o++) {
-            annualDonutsSold[o].textContent = Math.round(franchiseLocation[o].donuts * 365);
-            o++;
+            annualDonutsSold[o].textContent = Math.round(donuts * 365);
         }
     }
     if (annualCustomers.length > 0) {
         for (var p = 0; p < annualCustomers.length; p++) {
-            annualCustomers[p].textContent = Math.round(franchiseLocation[p].customers * 365);
-            p++;
+            annualCustomers[p].textContent = Math.round(customers * 365);
         }
     }
     if (annualCogs.length > 0) {
         for (var q = 0; q < annualCogs.length; q++) {
-            annualCogs[q].textContent = Math.round(franchiseLocation[q].cogs * 365);
-            q++;
+            annualCogs[q].textContent = Math.round(cogs * 365);
         }
     }
     if (annualSales.length > 0) {
         for (var r = 0; r < annualSales.length; r++) {
-            annualSales[r].textContent = ('$' + Math.round(franchiseLocation[r].sales * 365));
-            r++;
+            annualSales[r].textContent = ('$' + Math.round(sales * 365));
         }
     }
     if (annualProfits.length > 0) {
         for (var s = 0; s < annualProfits.length; s++) {
-            annualProfits[s].textContent = Math.round(franchiseLocation[s].profit * 365);
-            s++;
+            annualProfits[s].textContent = Math.round(profit * 365);
         }
     }
 
